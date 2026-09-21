@@ -1,0 +1,317 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Logo from '../components/Logo.astro';
+---
+
+<Layout
+  title="Privacy Policy — BCAway"
+  description="Privacy Policy for BCAway iOS, Android, and Web applications. Operated by Savera Continental LTD."
+>
+  <main class="policy-page">
+    <div class="policy-wrapper">
+      <nav class="policy-nav">
+        <a href="/" class="back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to BCAway
+        </a>
+      </nav>
+
+      <header class="policy-header">
+        <div class="logo-small">
+          <Logo width={48} />
+        </div>
+        <h1 class="policy-title">Privacy Policy</h1>
+        <p class="policy-meta">Last Updated: September 21, 2026 • Effective Immediately</p>
+      </header>
+
+      <div class="policy-content">
+        <div class="callout-box">
+          <p>
+            <strong>Summary:</strong> BCAway is built with a privacy-first ethos. We do <strong>not</strong> require student accounts, do <strong>not</strong> track your personal schedule, do <strong>not</strong> collect your name or student ID, and do <strong>not</strong> sell or monetize any user data.
+          </p>
+        </div>
+
+        <section class="policy-section">
+          <h2>1. Introduction & Overview</h2>
+          <p>
+            This Privacy Policy applies to the <strong>BCAway</strong> mobile applications (iOS and Android) and web application (<a href="https://app.bcaway.com">app.bcaway.com</a>), published by <strong>Savera Continental LTD.</strong> and developed by <strong>Kabir Sekhon</strong> (collectively referred to as "we", "us", or "our").
+          </p>
+          <p>
+            BCAway is an independent student utility created to display publicly posted teacher absences and bell schedules for Bergen County Academies ("BCA"). By accessing or using BCAway, you agree to the collection and use of information in accordance with this policy.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>2. Information We Do NOT Collect</h2>
+          <p>We believe in absolute data minimization. BCAway does <strong>NOT</strong> collect, require, or store:</p>
+          <ul>
+            <li>No user accounts, usernames, or passwords.</li>
+            <li>No personal identities, student names, or student ID numbers.</li>
+            <li>No personal student schedules or classroom assignments.</li>
+            <li>No location data, GPS coordinates, or IP tracking profiles.</li>
+            <li>No biometric, camera, microphone, or contact information.</li>
+            <li>No commercial advertising IDs or behavioral tracking tags.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>3. Information We Collect and How It Is Used</h2>
+          <p>The only data processed by BCAway is strictly necessary for the technical operation of the app:</p>
+          
+          <h3>A. Push Notification Device Tokens (Optional)</h3>
+          <p>
+            If you choose to enable push notifications for morning absence announcements, your device generates a randomized, anonymous push token provided by Apple Push Notification service (APNs) or Google Firebase Cloud Messaging (FCM).
+          </p>
+          <ul>
+            <li><strong>Purpose:</strong> Used exclusively to deliver morning notifications regarding daily schedule alerts.</li>
+            <li><strong>Anonymity:</strong> Push tokens are not linked to your name, email, student ID, device IMEI, or physical identity.</li>
+            <li><strong>Control:</strong> You can revoke this permission at any time directly through your device's system settings or within the app settings.</li>
+          </ul>
+
+          <h3>B. Local Device Storage</h3>
+          <p>
+            The app stores basic configuration settings (such as notification preferences and temporary local schedule cache) locally on your device via sandbox storage (`AsyncStorage`). This data never leaves your physical device.
+          </p>
+
+          <h3>C. Technical Log Data</h3>
+          <p>
+            When querying schedule or absence data, our servers receive standard, non-identifying HTTP request headers (such as timestamp and platform type) required for network communication. We do not store or use this data for profiling.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>4. Third-Party Service Providers</h2>
+          <p>
+            We rely on trusted third-party infrastructure providers solely to host backend databases and dispatch network requests. These providers are bound by strict data protection standards:
+          </p>
+          <ul>
+            <li><strong>Supabase Inc.:</strong> Hosts our read-only database of publicly available teacher absence notices.</li>
+            <li><strong>Cloudflare Inc.:</strong> Provides serverless API routing (Workers) and static content delivery.</li>
+            <li><strong>Apple Inc. (APNs) & Google LLC (FCM):</strong> Delivers encrypted push notifications to iOS and Android devices.</li>
+          </ul>
+          <p>We do not sell, rent, or trade any data to data brokers, advertising networks, or third parties.</p>
+        </section>
+
+        <section class="policy-section">
+          <h2>5. Children's Privacy (COPPA & FERPA Compliance)</h2>
+          <p>
+            BCAway complies with the Children's Online Privacy Protection Act (COPPA) and Family Educational Rights and Privacy Act (FERPA) standards:
+          </p>
+          <ul>
+            <li>We do not collect personal information from any user, including students under the age of 13.</li>
+            <li>We do not access, process, or maintain student educational records or academic histories.</li>
+            <li>All absence and schedule data displayed within the app represents aggregated public school schedule information.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>6. Data Retention and Deletion</h2>
+          <p>
+            Because we do not store personal accounts or identifying data, there is no personal profile retained on our servers. Push notification tokens are automatically purged when you uninstall the app or toggle notifications off. You may also request manual removal of your device token by contacting us at <a href="mailto:contact@bcaway.com">contact@bcaway.com</a>.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>7. Non-Affiliation and Disclaimer</h2>
+          <p>
+            <strong>BCAway is an independent utility and is NOT affiliated with, authorized by, endorsed by, or in any way officially connected with Bergen County Academies (BCA), the Bergen County Technical School District (BCTS), the Bergen County Board of Education, or any of their subsidiaries or affiliates.</strong>
+          </p>
+          <p>
+            Neither Bergen County Academies nor Bergen County Technical Schools is responsible or liable for the operation, privacy practices, or data handling of BCAway. For full legal terms, please review our <a href="/terms">Terms of Service and Disclaimers</a>.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>8. Contact Us</h2>
+          <p>
+            If you have questions, feedback, or concerns regarding this Privacy Policy, please contact us:
+          </p>
+          <div class="contact-card">
+            <p><strong>Publisher:</strong> Savera Continental LTD.</p>
+            <p><strong>Developer:</strong> Kabir Sekhon</p>
+            <p><strong>Email:</strong> <a href="mailto:contact@bcaway.com">contact@bcaway.com</a></p>
+            <p><strong>Website:</strong> <a href="https://bcaway.com">bcaway.com</a></p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="policy-footer">
+        <a href="/" class="footer-back-link">Return to Home</a>
+        <span class="footer-sep">•</span>
+        <a href="/terms" class="footer-back-link">Terms & Disclaimers</a>
+        <span class="footer-sep">•</span>
+        <a href="mailto:contact@bcaway.com" class="footer-back-link">Contact</a>
+      </footer>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .policy-page {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px 60px;
+    background-color: var(--color-bg);
+  }
+
+  .policy-wrapper {
+    max-width: 680px;
+    width: 100%;
+  }
+
+  .policy-nav {
+    margin-bottom: 28px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: opacity 0.15s ease;
+  }
+
+  .back-link:hover {
+    opacity: 0.8;
+  }
+
+  .policy-header {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .logo-small {
+    margin-bottom: 16px;
+  }
+
+  .policy-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .policy-meta {
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  .callout-box {
+    background-color: var(--color-primary-light);
+    border: 1px solid #D0E1FD;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 36px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #1E40AF;
+  }
+
+  .policy-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .policy-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+
+  .policy-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    margin: 16px 0 8px;
+  }
+
+  .policy-section p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  .policy-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .policy-section ul {
+    margin: 8px 0 16px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .policy-section li {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .policy-section a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .policy-section a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .contact-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .contact-card p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .policy-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 28px;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  .footer-back-link:hover {
+    color: var(--color-primary);
+  }
+
+  .footer-sep {
+    color: var(--color-border);
+  }
+
+  @media (max-width: 480px) {
+    .policy-page {
+      padding: 32px 16px 48px;
+    }
+
+    .policy-title {
+      font-size: 28px;
+    }
+  }
+</style>
