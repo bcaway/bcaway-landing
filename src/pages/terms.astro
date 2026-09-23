@@ -139,11 +139,16 @@ import Logo from '../components/Logo.astro';
       </div>
 
       <footer class="policy-footer">
-        <a href="/" class="footer-back-link">Return to Home</a>
-        <span class="footer-sep">•</span>
-        <a href="/privacy" class="footer-back-link">Privacy Policy</a>
-        <span class="footer-sep">•</span>
-        <a href="mailto:kabsek30@bergen.org" class="footer-back-link">Contact</a>
+        <div class="footer-links-group">
+          <a href="/" class="footer-back-link">Return to Home</a>
+          <span class="footer-sep">•</span>
+          <a href="/privacy" class="footer-back-link">Privacy Policy</a>
+          <span class="footer-sep">•</span>
+          <a href="mailto:kabsek30@bergen.org" class="footer-back-link">Contact</a>
+        </div>
+        <p class="copyright-text">
+          &copy; {new Date().getFullYear()} Kabir Sekhon. All rights reserved.
+        </p>
       </footer>
     </div>
   </main>
@@ -170,9 +175,9 @@ import Logo from '../components/Logo.astro';
   .back-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--color-primary);
     transition: opacity 0.15s ease;
   }
@@ -195,7 +200,7 @@ import Logo from '../components/Logo.astro';
     font-size: 32px;
     font-weight: 800;
     color: var(--color-text-main);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     margin-bottom: 8px;
   }
 
@@ -207,7 +212,7 @@ import Logo from '../components/Logo.astro';
   .warning-callout {
     background-color: #FEF2F2;
     border: 1px solid #FECACA;
-    border-left: 4px solid #EF4444;
+    border-left: 4px solid #DC2626;
     border-radius: var(--radius-sm);
     padding: 18px 20px;
     margin-bottom: 36px;
@@ -300,10 +305,22 @@ import Logo from '../components/Logo.astro';
     padding-top: 28px;
     margin-top: 48px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 12px;
     font-size: 13px;
     color: var(--color-text-muted);
+  }
+
+  .footer-links-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .copyright-text {
+    font-size: 12px;
+    color: var(--color-text-tertiary);
   }
 
   .footer-back-link:hover {

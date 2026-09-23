@@ -5,98 +5,81 @@ import Logo from '../components/Logo.astro';
 
 <Layout
   title="BCAway — Real-Time Absences & Schedules for BCA"
-  description="The easy way for Bergen County Academies students to see which teachers are absent."
+  description="Real-time teacher absences and daily bell schedules for Bergen County Academies students."
 >
   <main class="page-container">
     <div class="content-wrapper">
-      <!-- Brand Block -->
-      <div class="brand-section">
-        <div class="logo-wrapper">
-          <Logo width={88} />
-        </div>
+      <!-- Centered Hero Section -->
+      <section class="hero-section">
+        <a href="/" class="logo-link" aria-label="BCAway Home">
+          <Logo width={76} />
+        </a>
         <h1 class="brand-title">BCAway</h1>
         <p class="brand-tagline">
-          The easy way for Bergen County Academies students to see which teachers are absent.
+          Real-time teacher absences and daily bell schedules for Bergen County Academies students.
         </p>
-      </div>
 
-      <!-- 3 Direct Action Links -->
-      <div class="actions-container">
-        <!-- Web App Link -->
-        <a
-          href="https://app.bcaway.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="action-card web-card"
-        >
-          <div class="card-icon-wrapper web-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
+        <!-- Launch & Store Actions -->
+        <div class="store-row" role="group" aria-label="Launch and download options">
+          <div class="store-badge-card">
+            <button
+              type="button"
+              class="web-badge-btn"
+              onclick="window.open('https://app.bcaway.app', '_blank', 'noopener,noreferrer')"
+            >
+              Open Web App
+            </button>
           </div>
-          <div class="card-details">
-            <span class="card-label">Open in Browser</span>
-            <span class="card-title">Web App</span>
-            <span class="card-subtext">app.bcaway.app • Mac, Windows, Chromebook</span>
-          </div>
-          <div class="card-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </div>
-        </a>
 
-        <!-- iPhone App Link -->
-        <a
-          href="https://apps.apple.com/app/bcaway"
-          class="action-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="card-icon-wrapper apple-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.64-1.04 1.71-.91 2.73 1 .08 2.01-.51 2.6-1.22z"/>
-            </svg>
+          <div class="store-badge-card badge-disabled" title="iOS app coming soon">
+            <img
+              src="/badges/app-store-badge.svg"
+              alt="Download on the App Store (Coming Soon)"
+              class="store-img"
+              width="120"
+              height="40"
+            />
+            <span class="store-note">iOS (Coming Soon)</span>
           </div>
-          <div class="card-details">
-            <span class="card-label">Download for iOS</span>
-            <span class="card-title">iPhone App</span>
-            <span class="card-subtext">Apple App Store • iOS 16+</span>
-          </div>
-          <div class="card-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </div>
-        </a>
 
-        <!-- Android App Link -->
-        <a
-          href="https://play.google.com/store/apps/details?id=com.savera.bcaway"
-          class="action-card"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div class="card-icon-wrapper android-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3.609 1.814L13.793 12 3.61 22.186a2.38 2.38 0 0 1-.61-1.637V3.451c0-.623.23-1.2.609-1.637zm11.233 11.234l2.585 2.585-11.75 6.784 9.165-9.369zM18.84 10.74l2.84 1.64a1.218 1.218 0 0 1 0 2.115l-2.84 1.64-2.83-2.83 2.83-2.565zm-3.998-1.427L5.677 2.529l11.75 6.784-2.585 2.585z"/>
-            </svg>
+          <div class="store-badge-card badge-disabled" title="Android app coming soon">
+            <img
+              src="/badges/google-play-badge.svg"
+              alt="Get it on Google Play (Coming Soon)"
+              class="store-img"
+              width="135"
+              height="40"
+            />
+            <span class="store-note">Android (Coming Soon)</span>
           </div>
-          <div class="card-details">
-            <span class="card-label">Download for Android</span>
-            <span class="card-title">Android App</span>
-            <span class="card-subtext">Google Play Store</span>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section" aria-label="Features">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h2 class="feature-title">Teacher Absence Viewing</h2>
+            <p class="feature-text">
+              Real-time daily updates on faculty absences and mod coverage across BCA.
+            </p>
           </div>
-          <div class="card-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
+
+          <div class="feature-card">
+            <h2 class="feature-title">Schedule Connecting</h2>
+            <p class="feature-text">
+              Connect your bell schedule to track mods, passing times, and free periods.
+            </p>
           </div>
-        </a>
-      </div>
+
+          <div class="feature-card">
+            <h2 class="feature-title">Notifications when YOUR teachers are absent</h2>
+            <p class="feature-text">
+              Get notified right away the moment any of your specific teachers are absent.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <!-- Minimalist Footer -->
       <footer class="page-footer">
@@ -113,7 +96,7 @@ import Logo from '../components/Logo.astro';
         </div>
 
         <p class="copyright-text">
-          &copy; {new Date().getFullYear()} Savera Continental LTD. All rights reserved.
+          &copy; {new Date().getFullYear()} Kabir Sekhon. Licensed under AGPL v3.0.
         </p>
       </footer>
     </div>
@@ -126,163 +109,171 @@ import Logo from '../components/Logo.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 60px 20px 40px;
+    padding: 56px 20px 40px;
     width: 100%;
+    background-color: var(--color-bg);
   }
 
   .content-wrapper {
-    max-width: 480px;
+    max-width: 780px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hero Section */
+  .hero-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 48px;
+    width: 100%;
   }
 
-  /* Brand Section */
-  .brand-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 36px;
+  .logo-link {
+    display: inline-block;
+    margin-bottom: 18px;
+    transition: transform 0.15s ease;
   }
 
-  .logo-wrapper {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .logo-link:hover {
+    transform: scale(1.02);
   }
 
   .brand-title {
-    font-size: 38px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--color-text-main);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.035em;
     line-height: 1.1;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .brand-tagline {
-    font-size: 16px;
-    color: var(--color-text-muted);
-    line-height: 1.45;
-    max-width: 360px;
+    font-size: 17px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    max-width: 520px;
+    margin-bottom: 28px;
+    font-weight: 450;
   }
 
-  /* Action Cards Container */
-  .actions-container {
+  /* Store & Launch Row */
+  .store-row {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .store-badge-card {
+    display: inline-flex;
     flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    margin-bottom: 48px;
-  }
-
-  .action-card {
-    display: flex;
     align-items: center;
-    background-color: var(--color-bg);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 16px 18px;
-    text-align: left;
-    transition: all 0.15s ease-in-out;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    gap: 4px;
   }
 
-  .action-card:hover {
-    background-color: var(--color-surface);
-    border-color: #D1D5DB;
+  .web-badge-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 18px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #A6A6A6;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    box-sizing: border-box;
+    line-height: normal;
+  }
+
+  .web-badge-btn:hover {
+    background-color: #1E293B;
+    border-color: #000000;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
 
-  .action-card:active {
+  .web-badge-btn:active {
     transform: translateY(0);
   }
 
-  /* Web Card Highlight */
-  .web-card {
-    border-color: #D8E6FC;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F9FBFF 100%);
+  .badge-disabled {
+    opacity: 0.55;
+    filter: grayscale(80%);
+    cursor: default;
+    user-select: none;
   }
 
-  .web-card:hover {
-    border-color: var(--color-primary);
-    background: #F4F8FE;
+  .store-img {
+    height: 40px;
+    width: auto;
+    display: block;
+    border-radius: 6px;
   }
 
-  .card-icon-wrapper {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 16px;
-    flex-shrink: 0;
+  .store-note {
+    font-size: 11px;
+    color: var(--color-text-tertiary);
+    font-weight: 500;
   }
 
-  .web-icon {
-    background-color: var(--color-primary-light);
-    color: var(--color-primary);
+  /* Features Section */
+  .features-section {
+    width: 100%;
+    max-width: 640px;
+    margin-bottom: 56px;
   }
 
-  .apple-icon {
-    background-color: #F3F4F6;
-    color: #111827;
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    width: 100%;
   }
 
-  .android-icon {
-    background-color: #F0FDF4;
-    color: #16A34A;
-  }
-
-  .card-details {
-    flex: 1;
+  .feature-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px 18px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    min-width: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: all 0.15s ease;
   }
 
-  .card-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-tertiary);
-    margin-bottom: 2px;
+  .feature-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
   }
 
-  .card-title {
-    font-size: 17px;
+  .feature-title {
+    font-size: 15px;
     font-weight: 700;
     color: var(--color-text-main);
     letter-spacing: -0.01em;
-    margin-bottom: 2px;
+    line-height: 1.35;
+    margin-bottom: 8px;
   }
 
-  .card-subtext {
+  .feature-text {
     font-size: 13px;
-    color: var(--color-text-muted);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .card-arrow {
-    color: var(--color-text-tertiary);
-    display: flex;
-    align-items: center;
-    margin-left: 12px;
-    transition: transform 0.15s ease-in-out;
-  }
-
-  .action-card:hover .card-arrow {
-    color: var(--color-primary);
-    transform: translateX(2px);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin: 0;
   }
 
   /* Footer */
@@ -291,7 +282,7 @@ import Logo from '../components/Logo.astro';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 12px;
     border-top: 1px solid var(--color-border);
     padding-top: 28px;
   }
@@ -306,10 +297,6 @@ import Logo from '../components/Logo.astro';
     color: var(--color-text-muted);
   }
 
-  .footer-link {
-    transition: color 0.15s ease;
-  }
-
   .footer-link:hover {
     color: var(--color-primary);
   }
@@ -319,27 +306,31 @@ import Logo from '../components/Logo.astro';
     font-size: 11px;
   }
 
-
   .copyright-text {
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--color-text-tertiary);
+    text-align: center;
+    line-height: 1.4;
   }
 
-  @media (max-width: 480px) {
-    .page-container {
-      padding: 40px 16px 32px;
+  /* Responsive Design */
+  @media (max-width: 720px) {
+    .feature-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .brand-title {
-      font-size: 32px;
+      font-size: 36px;
     }
 
     .brand-tagline {
-      font-size: 15px;
+      font-size: 15.5px;
+      margin-bottom: 24px;
     }
 
-    .action-card {
-      padding: 14px 16px;
+    .page-container {
+      padding: 40px 16px 32px;
     }
   }
 </style>
