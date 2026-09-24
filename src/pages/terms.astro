@@ -24,7 +24,7 @@ import Logo from '../components/Logo.astro';
           <Logo width={48} />
         </div>
         <h1 class="policy-title">Terms of Service & Legal Disclaimers</h1>
-        <p class="policy-meta">Last Updated: September 21, 2026 • Effective Immediately</p>
+        <p class="policy-meta">Last Updated: September 24, 2026 • Effective Immediately</p>
       </header>
 
       <div class="policy-content">
@@ -60,7 +60,32 @@ import Logo from '../components/Logo.astro';
         </section>
 
         <section class="policy-section">
-          <h2>3. "As-Is" & "As-Available" Informational Disclaimer</h2>
+          <h2>3. Student Account Verification & Authorized Access</h2>
+          <p>
+            To protect faculty information and maintain the security of teacher absence notices, access to absence records within BCAway requires student verification:
+          </p>
+          <ul>
+            <li><strong>Eligible Accounts:</strong> Access is restricted strictly to active students possessing a valid district email address ending in <code>@bergen.org</code>.</li>
+            <li><strong>Passwordless Confirmation Links:</strong> Sign-in is completed via email confirmation links (magic links). You are responsible for maintaining the confidentiality of your school email account and any sign-in links delivered to it.</li>
+            <li><strong>Prohibition of Circumvention:</strong> Any attempt to forge authentication tokens, bypass domain checks, share confirmation links with unauthorized individuals outside the school community, or circumvent database Row-Level Security (RLS) policies is strictly prohibited and grounds for immediate termination of access.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>4. Acceptable Use & Anti-Scraping Rules</h2>
+          <p>
+            You agree to use BCAway solely for personal, non-commercial educational scheduling purposes. You expressly agree that you will not:
+          </p>
+          <ul>
+            <li>Deploy automated scripts, bots, spiders, crawlers, or scrapers to extract absence notices, schedules, or API endpoints.</li>
+            <li>Probe, scan, reverse-engineer, or test the vulnerability of our authentication systems, Cloudflare edge workers, or Supabase backend.</li>
+            <li>Impersonate any student, teacher, school staff member, or school administrator.</li>
+            <li>Overload, flood, or disrupt our network infrastructure or degrade the availability of the service for other students.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>5. "As-Is" & "As-Available" Informational Disclaimer</h2>
           <p>
             BCAway is provided strictly on an <strong>"AS-IS"</strong> and <strong>"AS-AVAILABLE"</strong> basis without warranties of any kind, whether express, implied, statutory, or otherwise:
           </p>
@@ -72,7 +97,7 @@ import Logo from '../components/Logo.astro';
         </section>
 
         <section class="policy-section">
-          <h2>4. Student Attendance Responsibility</h2>
+          <h2>6. Student Attendance Responsibility</h2>
           <p>
             <strong>Students remain 100% personally responsible for adhering to all official school attendance regulations and policies set by Bergen County Academies and the BCTS Board of Education.</strong>
           </p>
@@ -83,7 +108,7 @@ import Logo from '../components/Logo.astro';
         </section>
 
         <section class="policy-section">
-          <h2>5. Comprehensive Limitation of Liability</h2>
+          <h2>7. Comprehensive Limitation of Liability</h2>
           <p>
             TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL:
           </p>
@@ -104,28 +129,35 @@ import Logo from '../components/Logo.astro';
         </section>
 
         <section class="policy-section">
-          <h2>6. Indemnification</h2>
+          <h2>8. Indemnification</h2>
           <p>
             You agree to defend, indemnify, and hold harmless Kabir Sekhon, Savera Continental LTD., Bergen County Academies, and Bergen County Technical Schools from and against any claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising from or relating to your use of BCAway, violation of school policies, or violation of these Terms.
           </p>
         </section>
 
         <section class="policy-section">
-          <h2>7. Intellectual Property & License</h2>
+          <h2>9. Account Termination & Revocation</h2>
+          <p>
+            We reserve the right, in our sole discretion and without prior notice, to suspend or terminate access to BCAway, invalidate authentication sessions, or block IP addresses for any user who violates these Terms, abuses API resources, or attempts unauthorized access to teacher attendance data.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>10. Intellectual Property & License</h2>
           <p>
             The software, UI design, code, graphics, and branding of BCAway are licensed under the GNU Affero General Public License (AGPL) v3.0, unless otherwise noted. You may not misrepresent the origin of this software or use it to mislead users regarding school affiliation.
           </p>
         </section>
 
         <section class="policy-section">
-          <h2>8. Governing Law & Severability</h2>
+          <h2>11. Governing Law & Severability</h2>
           <p>
             These Terms shall be governed by and construed in accordance with the laws of the State of New Jersey, United States, without giving effect to any principles of conflicts of law. If any provision of these Terms is found to be unlawful, void, or for any reason unenforceable, then that provision shall be deemed severable and shall not affect the validity and enforceability of any remaining provisions.
           </p>
         </section>
 
         <section class="policy-section">
-          <h2>9. Contact Information</h2>
+          <h2>12. Contact Information</h2>
           <p>
             For legal inquiries, feedback, or support, please contact:
           </p>
@@ -265,13 +297,22 @@ import Logo from '../components/Logo.astro';
     margin: 8px 0 16px 22px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
   .policy-section li {
     font-size: 14.5px;
     line-height: 1.6;
     color: #374151;
+  }
+
+  .policy-section code {
+    font-size: 13px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
   .policy-section a {

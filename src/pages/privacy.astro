@@ -5,7 +5,7 @@ import Logo from '../components/Logo.astro';
 
 <Layout
   title="Privacy Policy — BCAway"
-  description="Privacy Policy for BCAway iOS, Android, and Web applications. Operated by Savera Continental LTD."
+  description="Privacy Policy for BCAway iOS, Android, and Web applications. Operated by Savera Continental LTD. and developed by Kabir Sekhon."
 >
   <main class="policy-page">
     <div class="policy-wrapper">
@@ -24,13 +24,13 @@ import Logo from '../components/Logo.astro';
           <Logo width={48} />
         </div>
         <h1 class="policy-title">Privacy Policy</h1>
-        <p class="policy-meta">Last Updated: September 21, 2026 • Effective Immediately</p>
+        <p class="policy-meta">Last Updated: September 24, 2026 • Effective Immediately</p>
       </header>
 
       <div class="policy-content">
         <div class="callout-box">
           <p>
-            <strong>Summary:</strong> BCAway is built with a privacy-first ethos. We do <strong>not</strong> require student accounts, do <strong>not</strong> track your personal schedule, do <strong>not</strong> collect your name or student ID, and do <strong>not</strong> sell or monetize any user data.
+            <strong>Summary:</strong> BCAway is engineered with a strict privacy-first, minimal-data ethos. To protect faculty data, access to teacher absence information is restricted to verified Bergen County Academies students using their official <code>@bergen.org</code> school email. We do <strong>not</strong> collect passwords, do <strong>not</strong> track your personal location, do <strong>not</strong> sync your class schedule to our servers, do <strong>not</strong> access school gradebooks, and <strong>never</strong> sell or monetize user data.
           </p>
         </div>
 
@@ -40,92 +40,127 @@ import Logo from '../components/Logo.astro';
             This Privacy Policy applies to the <strong>BCAway</strong> mobile applications (iOS and Android) and web application (<a href="https://app.bcaway.app">app.bcaway.app</a>), published by <strong>Savera Continental LTD.</strong> and developed by <strong>Kabir Sekhon</strong> (collectively referred to as "we", "us", or "our").
           </p>
           <p>
-            BCAway is an independent student utility created to display publicly posted teacher absences and bell schedules for Bergen County Academies ("BCA"). By accessing or using BCAway, you agree to the collection and use of information in accordance with this policy.
+            BCAway is an independent student utility created to display teacher absences and daily bell schedules for Bergen County Academies ("BCA"). By accessing or using BCAway, you agree to the collection and use of information in accordance with this policy.
           </p>
         </section>
 
         <section class="policy-section">
-          <h2>2. Information We Do NOT Collect</h2>
-          <p>We believe in absolute data minimization. BCAway does <strong>NOT</strong> collect, require, or store:</p>
+          <h2>2. Information We Collect and How It Is Handled</h2>
+          <p>We practice strict data minimization. We only collect the minimal technical data required to authenticate students, secure faculty absence information, and deliver core utility features:</p>
+
+          <h3>A. School Email Address & Authentication Records</h3>
+          <p>
+            To prevent unauthorized external access to faculty attendance records, students must authenticate using their official school email address (ending strictly in <code>@bergen.org</code>).
+          </p>
           <ul>
-            <li>No user accounts, usernames, or passwords.</li>
-            <li>No personal identities, student names, or student ID numbers.</li>
-            <li>No personal student schedules or classroom assignments.</li>
-            <li>No location data, GPS coordinates, or IP tracking profiles.</li>
-            <li>No biometric, camera, microphone, or contact information.</li>
-            <li>No commercial advertising IDs or behavioral tracking tags.</li>
+            <li><strong>Passwordless Verification:</strong> We do not collect, require, or store passwords. Sign-in is handled via a secure, single-use confirmation link (magic link) dispatched directly to your school email address.</li>
+            <li><strong>Supabase Authentication:</strong> Your email address is stored in our secure Supabase authentication database (<code>auth.users</code>), accompanied by an internal UUID, account creation timestamp, and last login timestamp.</li>
+            <li><strong>Strict Domain Restriction:</strong> Our backend database triggers and Row-Level Security (RLS) policies enforce that only verified <code>@bergen.org</code> accounts can register or query teacher absence data. Non-school emails are systematically rejected.</li>
+          </ul>
+
+          <h3>B. Local On-Device Data (Stored Exclusively on Your Device)</h3>
+          <p>
+            BCAway is designed to keep your personal schedule configuration local to your device:
+          </p>
+          <ul>
+            <li><strong>Session Credentials:</strong> Encrypted JWT access and refresh tokens are stored in your device's sandboxed local storage (<code>AsyncStorage</code> on mobile, <code>localStorage</code> on web) so you remain securely logged in across launches.</li>
+            <li><strong>Schedule Customization:</strong> Your configured courses, custom mod labels, and free-period preferences are saved locally on your physical device and are <strong>never</strong> transmitted to or stored on our servers.</li>
+            <li><strong>Teacher Subscriptions:</strong> Any specific teachers you select to receive tailored absence alerts for are tracked entirely locally on your device.</li>
+            <li><strong>Local Absence Cache:</strong> Absence records and master bell schedules are cached locally on your device to enable offline viewing and ensure immediate load times.</li>
+          </ul>
+
+          <h3>C. Push Notification Device Tokens (Optional)</h3>
+          <p>
+            If you choose to enable push notifications (such as morning absence announcements or personalized alerts when your tracked teachers are absent), your device generates an anonymous push token:
+          </p>
+          <ul>
+            <li><strong>Delivery Services:</strong> Apple Push Notification service (APNs) for iOS and Google Firebase Cloud Messaging (FCM) for Android.</li>
+            <li><strong>Anonymity:</strong> Push notification tokens are randomized strings and are never linked to your personal identity, student ID, device IMEI, or physical location.</li>
+            <li><strong>Revocation:</strong> You can disable notifications at any time directly through the app settings or via your device's system notification preferences.</li>
+          </ul>
+
+          <h3>D. Technical Log Data & Network Telemetry</h3>
+          <p>
+            When requesting absence or schedule updates, standard non-identifying HTTP request headers (such as timestamp, operating system, app version, and IP address) are processed in real time by our edge infrastructure (Cloudflare and Supabase) solely for DDoS mitigation, rate limiting, and network firewall defense. We do not use this data for behavioral profiling or tracking.
+          </p>
+        </section>
+
+        <section class="policy-section">
+          <h2>3. Information We Do NOT Collect</h2>
+          <p>We are dedicated to safeguarding student privacy. BCAway does <strong>NOT</strong> collect, request, or store:</p>
+          <ul>
+            <li>No user passwords or biometric data.</li>
+            <li>No student real names, home addresses, or phone numbers.</li>
+            <li>No student ID numbers or lunch account codes.</li>
+            <li>No student grades, GPA, transcripts, or academic performance records.</li>
+            <li>No integration or login credentials for school management systems (such as Genesis, PowerSchool, Google Classroom, Naviance, or Canvas).</li>
+            <li>No personal daily schedules or classroom assignments on our backend servers.</li>
+            <li>No GPS coordinates, Wi-Fi location tracking, or Bluetooth beacons.</li>
+            <li>No access to your camera, microphone, photo library, or address book.</li>
+            <li>No advertising identifiers (IDFA, GAID) or cross-site tracking cookies.</li>
+            <li>No data monetization or sale of student data to third parties.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>3. Information We Collect and How It Is Used</h2>
-          <p>The only data processed by BCAway is strictly necessary for the technical operation of the app:</p>
-          
-          <h3>A. Push Notification Device Tokens (Optional)</h3>
-          <p>
-            If you choose to enable push notifications for morning absence announcements, your device generates a randomized, anonymous push token provided by Apple Push Notification service (APNs) or Google Firebase Cloud Messaging (FCM).
-          </p>
+          <h2>4. How We Use Information</h2>
+          <p>The information we collect is used strictly for the following purposes:</p>
           <ul>
-            <li><strong>Purpose:</strong> Used exclusively to deliver morning notifications regarding daily schedule alerts.</li>
-            <li><strong>Anonymity:</strong> Push tokens are not linked to your name, email, student ID, device IMEI, or physical identity.</li>
-            <li><strong>Control:</strong> You can revoke this permission at any time directly through your device's system settings or within the app settings.</li>
+            <li>Verifying active Bergen County Academies enrollment prior to displaying teacher absence information.</li>
+            <li>Maintaining your persistent authenticated session on your device.</li>
+            <li>Delivering push notification alerts that you have opted into.</li>
+            <li>Enforcing API rate limits and preventing automated scraping or unauthorized database access.</li>
           </ul>
-
-          <h3>B. Local Device Storage</h3>
-          <p>
-            The app stores basic configuration settings (such as notification preferences and temporary local schedule cache) locally on your device via sandbox storage (`AsyncStorage`). This data never leaves your physical device.
-          </p>
-
-          <h3>C. Technical Log Data</h3>
-          <p>
-            When querying schedule or absence data, our servers receive standard, non-identifying HTTP request headers (such as timestamp and platform type) required for network communication. We do not store or use this data for profiling.
-          </p>
         </section>
 
         <section class="policy-section">
-          <h2>4. Third-Party Service Providers</h2>
+          <h2>5. Third-Party Service Providers</h2>
           <p>
-            We rely on trusted third-party infrastructure providers solely to host backend databases and dispatch network requests. These providers are bound by strict data protection standards:
+            We rely on trusted, industry-standard infrastructure providers solely to host our backend database, secure authentication, and route network requests. These providers adhere to strict data security standards:
           </p>
           <ul>
-            <li><strong>Supabase Inc.:</strong> Hosts our read-only database of publicly available teacher absence notices.</li>
-            <li><strong>Cloudflare Inc.:</strong> Provides serverless API routing (Workers) and static content delivery.</li>
+            <li><strong>Supabase Inc.:</strong> Hosts our user authentication system, session management, and PostgreSQL database with Row-Level Security (RLS).</li>
+            <li><strong>Cloudflare Inc.:</strong> Provides serverless API routing, global content caching, and DDoS protection.</li>
             <li><strong>Apple Inc. (APNs) & Google LLC (FCM):</strong> Delivers encrypted push notifications to iOS and Android devices.</li>
           </ul>
-          <p>We do not sell, rent, or trade any data to data brokers, advertising networks, or third parties.</p>
+          <p>We do not sell, rent, lease, trade, or share any student information with data brokers, advertisers, or third-party marketing companies.</p>
         </section>
 
         <section class="policy-section">
-          <h2>5. Children's Privacy (COPPA & FERPA Compliance)</h2>
+          <h2>6. Children's Privacy (COPPA & FERPA Compliance)</h2>
           <p>
-            BCAway complies with the Children's Online Privacy Protection Act (COPPA) and Family Educational Rights and Privacy Act (FERPA) standards:
+            BCAway is designed for high school students attending Bergen County Academies and operates in full compliance with the Children's Online Privacy Protection Act (COPPA) and Family Educational Rights and Privacy Act (FERPA) standards:
           </p>
           <ul>
-            <li>We do not collect personal information from any user, including students under the age of 13.</li>
+            <li>We do not collect personal information from children under the age of 13.</li>
             <li>We do not access, process, or maintain student educational records or academic histories.</li>
-            <li>All absence and schedule data displayed within the app represents aggregated public school schedule information.</li>
+            <li>Student school email addresses are processed solely for the narrow purpose of school domain verification and access authorization.</li>
           </ul>
         </section>
 
         <section class="policy-section">
-          <h2>6. Data Retention and Deletion</h2>
+          <h2>7. Data Retention, Sign-Out, and Account Deletion</h2>
           <p>
-            Because we do not store personal accounts or identifying data, there is no personal profile retained on our servers. Push notification tokens are automatically purged when you uninstall the app or toggle notifications off. You may also request manual removal of your device token by contacting us at <a href="mailto:kabsek30@bergen.org">kabsek30@bergen.org</a>.
+            You have full control over your session and account data:
+          </p>
+          <ul>
+            <li><strong>Signing Out:</strong> You can sign out at any time through the app by visiting <em>Settings &rarr; Account &rarr; Sign Out</em>. Signing out immediately invalidates your session and removes local auth tokens and cached absences from your device.</li>
+            <li><strong>Account Deletion:</strong> If you wish to permanently delete your <code>@bergen.org</code> authentication record and associated push tokens from our Supabase database, you can submit a deletion request by emailing <a href="mailto:kabsek30@bergen.org">kabsek30@bergen.org</a> from your school email. Requests are processed promptly.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section">
+          <h2>8. Non-Affiliation and Disclaimer</h2>
+          <p>
+            <strong>BCAway is an independent student utility and is NOT affiliated with, authorized by, endorsed by, or in any way officially connected with Bergen County Academies (BCA), the Bergen County Technical School District (BCTS), the Bergen County Board of Education, or any of their subsidiaries or affiliates.</strong>
+          </p>
+          <p>
+            Neither Bergen County Academies nor Bergen County Technical Schools is responsible or liable for the operation, privacy practices, or data handling of BCAway. For complete legal terms, please review our <a href="/terms">Terms of Service and Disclaimers</a>.
           </p>
         </section>
 
         <section class="policy-section">
-          <h2>7. Non-Affiliation and Disclaimer</h2>
-          <p>
-            <strong>BCAway is an independent utility and is NOT affiliated with, authorized by, endorsed by, or in any way officially connected with Bergen County Academies (BCA), the Bergen County Technical School District (BCTS), the Bergen County Board of Education, or any of their subsidiaries or affiliates.</strong>
-          </p>
-          <p>
-            Neither Bergen County Academies nor Bergen County Technical Schools is responsible or liable for the operation, privacy practices, or data handling of BCAway. For full legal terms, please review our <a href="/terms">Terms of Service and Disclaimers</a>.
-          </p>
-        </section>
-
-        <section class="policy-section">
-          <h2>8. Contact Us</h2>
+          <h2>9. Contact Us</h2>
           <p>
             If you have questions, feedback, or concerns regarding this Privacy Policy, please contact us:
           </p>
@@ -220,6 +255,14 @@ import Logo from '../components/Logo.astro';
     color: #1E3A8A;
   }
 
+  .callout-box code {
+    font-size: 13px;
+    background-color: rgba(37, 99, 235, 0.1);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
   .policy-content {
     display: flex;
     flex-direction: column;
@@ -256,13 +299,22 @@ import Logo from '../components/Logo.astro';
     margin: 8px 0 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
   }
 
   .policy-section li {
     font-size: 14.5px;
     line-height: 1.6;
     color: #374151;
+  }
+
+  .policy-section code {
+    font-size: 13px;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   }
 
   .policy-section a {
