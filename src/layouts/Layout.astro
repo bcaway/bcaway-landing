@@ -37,6 +37,8 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="https://bcaway.app/icon.png" />
 
+    <slot name="head" />
+
     <style is:global>
       *, *::before, *::after {
         box-sizing: border-box;
