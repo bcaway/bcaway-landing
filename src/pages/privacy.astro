@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout
@@ -173,20 +174,7 @@ import Logo from '../components/Logo.astro';
         </section>
       </div>
 
-      <footer class="policy-footer">
-        <div class="footer-links-group">
-          <a href="/" class="footer-back-link">Return to Home</a>
-          <span class="footer-sep">•</span>
-          <a href="/terms" class="footer-back-link">Terms & Disclaimers</a>
-          <span class="footer-sep">•</span>
-          <a href="/contact" class="footer-back-link">Contact</a>
-          <span class="footer-sep">•</span>
-          <a href="/requestteacher" class="footer-back-link">Request a Teacher</a>
-        </div>
-        <p class="copyright-text">
-          &copy; {new Date().getFullYear()} Kabir Sekhon. All rights reserved.
-        </p>
-      </footer>
+      <Footer />
     </div>
   </main>
 </Layout>
@@ -343,37 +331,6 @@ import Logo from '../components/Logo.astro';
   .contact-card p {
     font-size: 14px;
     margin: 0;
-  }
-
-  .policy-footer {
-    border-top: 1px solid var(--color-border);
-    padding-top: 28px;
-    margin-top: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: var(--color-text-muted);
-  }
-
-  .footer-links-group {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .copyright-text {
-    font-size: 12px;
-    color: var(--color-text-tertiary);
-  }
-
-  .footer-back-link:hover {
-    color: var(--color-primary);
-  }
-
-  .footer-sep {
-    color: var(--color-border);
   }
 
   @media (max-width: 480px) {

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Logo from '../components/Logo.astro';
+import Footer from '../components/Footer.astro';
 
 const formUrl = 'https://forms.gle/Y8ppTsknzoHfJ2MW9';
 ---
@@ -45,23 +46,7 @@ const formUrl = 'https://forms.gle/Y8ppTsknzoHfJ2MW9';
         </div>
       </div>
 
-      <footer class="page-footer">
-        <div class="footer-links">
-          <a href="/privacy" class="footer-link">Privacy Policy</a>
-          <span class="footer-sep">•</span>
-          <a href="/terms" class="footer-link">Terms & Disclaimers</a>
-          <span class="footer-sep">•</span>
-          <a href="https://github.com/bcaway" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-          <span class="footer-sep">•</span>
-          <a href="https://instagram.com/getbcaway" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
-          <span class="footer-sep">•</span>
-          <a href="/contact" class="footer-link">Contact</a>
-        </div>
-
-        <p class="copyright-text">
-          &copy; {new Date().getFullYear()} Kabir Sekhon. Licensed under AGPL v3.0.
-        </p>
-      </footer>
+      <Footer />
     </div>
   </main>
 
@@ -101,7 +86,7 @@ const formUrl = 'https://forms.gle/Y8ppTsknzoHfJ2MW9';
     border-radius: var(--radius-md);
     background-color: #FFFFFF;
     box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.05);
-    margin-bottom: 36px;
+    margin-bottom: 0;
   }
 
   .logo-link {
@@ -190,42 +175,5 @@ const formUrl = 'https://forms.gle/Y8ppTsknzoHfJ2MW9';
 
   .secondary-btn:active {
     transform: translateY(0);
-  }
-
-  /* Footer */
-  .page-footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 24px;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--color-text-muted);
-  }
-
-  .footer-link:hover {
-    color: var(--color-primary);
-  }
-
-  .footer-sep {
-    color: var(--color-border);
-    font-size: 11px;
-  }
-
-  .copyright-text {
-    font-size: 12px;
-    color: var(--color-text-tertiary);
-    text-align: center;
-    line-height: 1.4;
   }
 </style>
