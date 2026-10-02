@@ -66,7 +66,7 @@ import Footer from '../components/Footer.astro';
 
           <h3>B. Starred Teachers & Personalized Notification Subscriptions</h3>
           <p>
-            BCAway allows you to star or favorite specific faculty members to receive personalized push notifications when those teachers are absent, have modified mod coverage, or return to school:
+            BCAway allows you to star or favorite specific faculty members to receive personalized push notifications when those teachers are absent, have modified period coverage, or return to school:
           </p>
           <ul>
             <li><strong>Database Storage:</strong> When you star a teacher, the association between your account UUID and the selected teacher identifier (<code>user_starred_teachers</code>) is stored in our secure PostgreSQL database managed via Supabase.</li>
@@ -99,7 +99,7 @@ import Footer from '../components/Footer.astro';
             Personalized schedule details and offline data remain entirely on your physical device and are never uploaded to our servers:
           </p>
           <ul>
-            <li><strong>Local Schedule Customization:</strong> Custom mod labels, personal course names, free-period markers, and schedule notes are saved exclusively in your device's local sandboxed storage (<code>AsyncStorage</code> on mobile, <code>localStorage</code> on web) and never transmit across our network.</li>
+            <li><strong>Local Schedule Customization:</strong> Custom period labels, personal course names, free-period markers, and schedule notes are saved exclusively in your device's local sandboxed storage (<code>AsyncStorage</code> on mobile, <code>localStorage</code> on web) and never transmit across our network.</li>
             <li><strong>Offline Cache:</strong> Master bell schedules, period timings, and daily absence snapshots are cached locally on your device to enable instant offline viewing and reduce network overhead.</li>
             <li><strong>Authentication Sessions:</strong> Encrypted JWT access and refresh tokens are stored locally on your device to maintain your session between launches without requiring re-authentication.</li>
           </ul>
